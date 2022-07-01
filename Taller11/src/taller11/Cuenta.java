@@ -34,7 +34,7 @@ public class Cuenta {
         menu = n;
     }
     public void establecerValorCancelar(){
-       valorCancelarTotal = (iva * subtotal)/100;
+       valorCancelarTotal = subtotal + (iva * subtotal)/100;
     
     }
     public double obtenerValorCancelar() {

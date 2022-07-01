@@ -9,6 +9,7 @@ package taller11;
  * @author DELL
  */
 public abstract class Menu {
+
     protected String NombrePlato;
     protected double valorM;
     protected double ValorInicialM;
@@ -37,11 +38,13 @@ public abstract class Menu {
     public void establecerValorInicialM(double n) {
         ValorInicialM = n;
     }
-    
-     public abstract void establecerValorCancelar();  
-     
-     
-     
+
+    public abstract void establecerValorCancelar();
+
+    public double obtenerValorCancelar() {
+        return valorCancelar;
+    }
+
     @Override
     public String toString() {
         String cadena = String.format(""

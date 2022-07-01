@@ -22,10 +22,6 @@ public class Ejecutor {
         Cuenta cue = new Cuenta();
         ArrayList<Menu> listaMenus = new ArrayList<>();
         
-        cue.establecerMenu(listaMenus);
-        cue.establecerNombre("Pablo Costa Torres");
-        cue.establecerSubtotal();
-        cue.establecerIva();
         
         
         MenuNinios n1 = new MenuNinios();
@@ -66,10 +62,15 @@ public class Ejecutor {
         listaMenus.add(d1);
         listaMenus.add(c1);
         
+        cue.establecerMenu(listaMenus);
+        cue.establecerNombre("Pablo Costa Torres");
+        cue.establecerSubtotal();
+        cue.establecerIva();
+        
         for (int i = 0; i < listaMenus.size(); i++) {
             listaMenus.get(i).establecerValorCancelar();
         }
-        
+        cue.establecerValorCancelar();
         System.out.println(cue);
     }
 }

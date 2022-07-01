@@ -42,7 +42,7 @@ public class MenuDia extends Menu {
                 + "Valor De Bebida: %.2f\nValor del Menu:  %.2f\n",
                 cadena,
                 obtenerValorPostre(),
-                obtenerValorBebida(), obtenerValorM());
+                obtenerValorBebida(),  obtenerValorCancelar());
         return cadena;
     }
 

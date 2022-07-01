@@ -32,7 +32,7 @@ public class MenuEconomico extends Menu {
         cadena = String.format("%sValor del PorcentajeDescuento: %.2f\n"
                 + "Valor del Menu:  %.2f\n",
                 cadena,
-                obtenerPorcentajeDescuento(), obtenerValorM());
+                obtenerPorcentajeDescuento(),  obtenerValorCancelar());
         return cadena;
     }
 

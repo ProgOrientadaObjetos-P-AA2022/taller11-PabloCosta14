@@ -24,8 +24,7 @@ public class Ejecutor2 {
 
          cue.establecerMenu(listaMenus);
         cue.establecerNombre("Pablo Costa Torres");
-        cue.establecerSubtotal();
-        cue.establecerIva();
+       
 
         MenuNinios n1 = new MenuNinios();
         MenuNinios n2 = new MenuNinios();
@@ -35,32 +34,31 @@ public class Ejecutor2 {
         n1.establecerValorPorcionHelado(1.00);
         n1.establecerValorPorcionPastel(1.50);
         n1.establecerValorM(4.50);
-        n1.establecerValorCancelar();
+        
 
         n2.establecerNombrePlato("Niños02");
         n2.establecerValorInicialM(3.00);
         n2.establecerValorPorcionHelado(1.50);
         n2.establecerValorPorcionPastel(1.50);
         n2.establecerValorM(5.50);
-        n2.establecerValorCancelar();
-
+      
         MenuEconomico e1 = new MenuEconomico();
         e1.establecerNombrePlato("Econo 001");
         e1.establecerValorInicialM(4.00);
         e1.establecerPorcentajeDescuento(25.00);
-        e1.establecerValorM(3.00);
+        
 
         MenuDia d1 = new MenuDia();
         d1.establecerNombrePlato("Dia 001");
         d1.establecerValorInicialM(5.00);
         d1.establecerValorBebida(1.00);
         d1.establecerValorPostre(1.00);
-        d1.establecerValorM(7.00);
+      
 
         MenuCarta c1 = new MenuCarta();
         c1.establecerNombrePlato("Carta 001");
         c1.establecerValorInicialM(6.0);
-        c1.establecerValorM(10.10);
+      
         c1.establecerValorPorcionGuarnicion(1.5);
         c1.establecerValorBebida(2.0);
         c1.establecerPorcentajeServ(10.00);
@@ -72,14 +70,16 @@ public class Ejecutor2 {
         listaMenus.add(c1);
         
      
-        
+        cue.establecerSubtotal();
+        cue.establecerIva();
+
         
         for (int i = 0; i < listaMenus.size(); i++) {
             listaMenus.get(i).establecerValorCancelar();
         }
         
         //System.out.println(listaMenus.get(1).obtenerValorCancelar());
-
+        cue.establecerValorCancelar();
        System.out.println(cue);
     }
 }
