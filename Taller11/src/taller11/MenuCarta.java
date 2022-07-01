@@ -19,7 +19,8 @@ public class MenuCarta extends Menu {
     }
 
     public void establecerPorcentajeServ(double n) {
-        porcentajeServ = (n * obtenerValorM()) / 100;
+        // porcentajeServ = (n * obtenerValorM()) / 100;
+        porcentajeServ = n;
     }
 
     public double obtenerValorPorcionGuarnicion() {
@@ -46,13 +47,14 @@ public class MenuCarta extends Menu {
 
     @Override
     public String toString() {
-        String cadena = String.format("**Menu Carta**\n%s", super.toString());
+        String cadena = String.format("Menu a la Carta\n%s", super.toString());
         cadena = String.format("%sValor de porcion de guarnicion %.2f\n"
                 + "Valor De Bebida %.2f\n"
-                + "Porcentaje Adicional", cadena,
+                + "Porcentaje Adicional %s\n"
+                + "Valor del Menu:  %.2f\n", cadena,
                 obtenerValorPorcionGuarnicion(),
                 obtenerValorBebida(),
-                obtenerPorcentajeServ());
+                obtenerPorcentajeServ(), obtenerValorM());
         return cadena;
     }
 }

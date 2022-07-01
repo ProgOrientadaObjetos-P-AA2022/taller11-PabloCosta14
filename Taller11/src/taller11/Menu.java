@@ -38,7 +38,10 @@ public abstract class Menu {
         ValorInicialM = n;
     }
     
-     public abstract void establecerValorCancelar();    
+     public abstract void establecerValorCancelar();  
+     
+     
+     
     @Override
     public String toString() {
         String cadena = String.format(""

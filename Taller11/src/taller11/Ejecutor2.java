@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author reroes
  */
-public class Ejecutor {
+public class Ejecutor2 {
 
     /**
      * @param args the command line arguments
@@ -21,55 +21,65 @@ public class Ejecutor {
 
         Cuenta cue = new Cuenta();
         ArrayList<Menu> listaMenus = new ArrayList<>();
-        
-        cue.establecerMenu(listaMenus);
+
+         cue.establecerMenu(listaMenus);
         cue.establecerNombre("Pablo Costa Torres");
         cue.establecerSubtotal();
         cue.establecerIva();
-        
-        
+
         MenuNinios n1 = new MenuNinios();
         MenuNinios n2 = new MenuNinios();
-        
-        n1.establecerNombrePlato("Cena Infantil");
-        n1.establecerValorInicialM(6);
+
+        n1.establecerNombrePlato("Niños01");
+        n1.establecerValorInicialM(2.00);
         n1.establecerValorPorcionHelado(1.00);
-        n1.establecerValorPorcionPastel(4.20);
+        n1.establecerValorPorcionPastel(1.50);
+        n1.establecerValorM(4.50);
         n1.establecerValorCancelar();
-        n2.establecerNombrePlato("Almuerzo infantil");
-        n2.establecerValorInicialM(5);
-        n2.establecerValorPorcionHelado(0.50);
-        n2.establecerValorPorcionPastel(2.20);
-        
+
+        n2.establecerNombrePlato("Niños02");
+        n2.establecerValorInicialM(3.00);
+        n2.establecerValorPorcionHelado(1.50);
+        n2.establecerValorPorcionPastel(1.50);
+        n2.establecerValorM(5.50);
+        n2.establecerValorCancelar();
+
         MenuEconomico e1 = new MenuEconomico();
-        e1.establecerNombrePlato("Cuarto de pollo");
-        e1.establecerValorInicialM(3.50);
-        e1.establecerPorcentajeDescuento(10);
-        
+        e1.establecerNombrePlato("Econo 001");
+        e1.establecerValorInicialM(4.00);
+        e1.establecerPorcentajeDescuento(25.00);
+        e1.establecerValorM(3.00);
+
         MenuDia d1 = new MenuDia();
-        d1.establecerNombrePlato("Camarones Reventados");
+        d1.establecerNombrePlato("Dia 001");
         d1.establecerValorInicialM(5.00);
         d1.establecerValorBebida(1.00);
-        d1.establecerValorPostre(0.50);
-        
+        d1.establecerValorPostre(1.00);
+        d1.establecerValorM(7.00);
+
         MenuCarta c1 = new MenuCarta();
-        c1.establecerNombrePlato("Lasaña Inglesa");
-        c1.establecerValorInicialM(8.00);
-        c1.establecerValorM(10.00);
-        c1.establecerValorPorcionGuarnicion(3.50);
-        c1.establecerValorBebida(2.00);
-        c1.establecerPorcentajeServ(32);
-        
+        c1.establecerNombrePlato("Carta 001");
+        c1.establecerValorInicialM(6.0);
+        c1.establecerValorM(10.10);
+        c1.establecerValorPorcionGuarnicion(1.5);
+        c1.establecerValorBebida(2.0);
+        c1.establecerPorcentajeServ(10.00);
+
         listaMenus.add(n1);
         listaMenus.add(n2);
         listaMenus.add(e1);
         listaMenus.add(d1);
         listaMenus.add(c1);
         
+     
+        
+        
         for (int i = 0; i < listaMenus.size(); i++) {
             listaMenus.get(i).establecerValorCancelar();
         }
         
-        System.out.println(cue);
+        //System.out.println(listaMenus.get(1).obtenerValorCancelar());
+
+       System.out.println(cue);
     }
 }

@@ -17,7 +17,8 @@ public class MenuEconomico extends Menu {
     }
 
     public void establecerPorcentajeDescuento(double n) {
-        porcentajeDescuento = (n * ValorInicialM) / 100;
+       porcentajeDescuento = (n * ValorInicialM) / 100;
+     // porcentajeDescuento = n;
     }
 
     @Override
@@ -27,10 +28,11 @@ public class MenuEconomico extends Menu {
 
     @Override
     public String toString() {
-        String cadena = String.format("**Menu Economico**\n%s", super.toString());
-        cadena = String.format("%sValor del PorcentajeDescuento: %.2f\n",
+        String cadena = String.format("Menu Economico \n%s", super.toString());
+        cadena = String.format("%sValor del PorcentajeDescuento: %.2f\n"
+                + "Valor del Menu:  %.2f\n",
                 cadena,
-                obtenerPorcentajeDescuento());
+                obtenerPorcentajeDescuento(), obtenerValorM());
         return cadena;
     }
 

@@ -13,8 +13,8 @@ import java.util.ArrayList;
 public class Cuenta {
 
     protected String nombre;
-    protected ArrayList<Menu> Menu;
-    protected double valorCancelar;
+    protected ArrayList<Menu> menu;
+    protected double valorCancelarTotal;
     protected double subtotal;
     protected double iva;
 
@@ -27,23 +27,28 @@ public class Cuenta {
     }
 
     public ArrayList<Menu> obtenerMenu() {
-        return Menu;
+        return menu;
     }
 
     public void establecerMenu(ArrayList<Menu> n) {
-        Menu = n;
+        menu = n;
     }
-
+    public void establecerValorCancelar(){
+       valorCancelarTotal = (iva * subtotal)/100;
+    
+    }
     public double obtenerValorCancelar() {
-        return valorCancelar;
+        return valorCancelarTotal;
     }
 
     public double obtenerSubtotal() {
         return subtotal;
     }
 
-    public void establecerSubtotal(double n) {
-        subtotal = n;
+    public void establecerSubtotal() {
+        for (int i = 0; i < menu.size(); i++) {
+            subtotal = subtotal + menu.get(i).obtenerValorM();
+        }
     }
 
     public double obtenerIva() {
@@ -56,8 +61,8 @@ public class Cuenta {
 
     @Override
     public String toString() {
-        String cadena = String.format("Datos Del Usuario/Cliente\n"
-                + "Nombre del cliente: %s\n",
+        String cadena = String.format("Factura\n"
+                + "Cliente: %s\n",
                 obtenerNombre());
 
         for (int i = 0; i < obtenerMenu().size(); i++) {
@@ -68,7 +73,7 @@ public class Cuenta {
 
         cadena = String.format("\n%s"
                 + "Subtotal: %.2f\n"
-                + "Valor Del IVA: %.2f\n"
+                + "IVA: %.2f\n"
                 + "Total a pagar: %.2f\n",
                 cadena,
                 obtenerSubtotal(),
