@@ -10,17 +10,23 @@ package taller11;
  */
 public abstract class Menu {
 
-    protected String NombrePlato;
+    protected String nombrePlato;
     protected double valorM;
-    protected double ValorInicialM;
+    protected double valorInicialM;
     protected double valorCancelar;
-
+      
+    
+    public Menu(String a, double n){
+        nombrePlato = a;
+        valorInicialM = n;
+    
+    }
     public String obtenerNombrePlato() {
-        return NombrePlato;
+        return nombrePlato;
     }
 
     public void establecerNombrePlato(String n) {
-        NombrePlato = n;
+        nombrePlato = n;
     }
 
     public double obtenerValorM() {
@@ -32,11 +38,11 @@ public abstract class Menu {
     }
 
     public double obtenerValorInicialM() {
-        return ValorInicialM;
+        return valorInicialM;
     }
 
     public void establecerValorInicialM(double n) {
-        ValorInicialM = n;
+        valorInicialM = n;
     }
 
     public abstract void establecerValorCancelar();

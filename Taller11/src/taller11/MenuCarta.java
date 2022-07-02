@@ -13,6 +13,14 @@ public class MenuCarta extends Menu {
     private double valorPorcionGuarnicion;
     private double valorBebida;
     private double porcentajeServ;
+    
+    
+    public MenuCarta(String nom, double vI,double vG,double vB,double porc){
+    super(nom,vI);
+    valorPorcionGuarnicion = vG;
+    valorBebida = vB;
+    porcentajeServ = porc;
+    }
 
     public double obtenerPorcentajeServ() {
         return porcentajeServ;
@@ -41,17 +49,17 @@ public class MenuCarta extends Menu {
 
     @Override
     public void establecerValorCancelar() {
-        valorCancelar = valorM + ValorInicialM + valorPorcionGuarnicion
-                + valorBebida + porcentajeServ;
+        valorCancelar = valorM + valorInicialM + valorPorcionGuarnicion
+                + valorBebida + (valorInicialM * porcentajeServ / 100);
     }
 
     @Override
     public String toString() {
-        String cadena = String.format("Menu a la Carta\n%s", super.toString());
-        cadena = String.format("%sValor de porcion de guarnicion %.2f\n"
-                + "Valor De Bebida %.2f\n"
-                + "Porcentaje Adicional %s\n"
-                + "Valor del Menu:  %.2f\n", cadena,
+        String cadena = String.format("Menu a la Carta:\n%s", super.toString());
+        cadena = String.format("%sValor de porcion de guarnicion %.1f\n"
+                + "Valor De Bebida %.1f\n"
+                + "Porcentaje Adicional %.2f\n"
+                + "Valor del Menu: %.2f\n", cadena,
                 obtenerValorPorcionGuarnicion(),
                 obtenerValorBebida(),
                 obtenerPorcentajeServ(), obtenerValorCancelar());

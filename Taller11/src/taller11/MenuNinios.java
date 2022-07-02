@@ -13,6 +13,13 @@ public class MenuNinios extends Menu {
     private double valorPorcionHelado;
     private double valorPorcionPastel;
 
+    public MenuNinios(String nom, double vI, double vH, double vP) {
+        super(nom, vI);
+        valorPorcionHelado = vH;
+        valorPorcionPastel = vP;
+
+    }
+
     public double obtenerValorPorcionHelado() {
         return valorPorcionHelado;
     }
@@ -31,7 +38,7 @@ public class MenuNinios extends Menu {
 
     @Override
     public void establecerValorCancelar() {
-        valorCancelar = ValorInicialM
+        valorCancelar = valorInicialM
                 + valorPorcionHelado + valorPorcionPastel;
     }
 

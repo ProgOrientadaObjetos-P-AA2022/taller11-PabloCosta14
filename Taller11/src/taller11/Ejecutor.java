@@ -19,58 +19,32 @@ public class Ejecutor {
     public static void main(String[] args) {
         // TODO code application logic here
 
-        Cuenta cue = new Cuenta();
+        /// Reto1
         ArrayList<Menu> listaMenus = new ArrayList<>();
-        
-        
-        
-        MenuNinios n1 = new MenuNinios();
-        MenuNinios n2 = new MenuNinios();
-        
-        n1.establecerNombrePlato("Cena Infantil");
-        n1.establecerValorInicialM(6);
-        n1.establecerValorPorcionHelado(1.00);
-        n1.establecerValorPorcionPastel(4.20);
-        n1.establecerValorCancelar();
-        n2.establecerNombrePlato("Almuerzo infantil");
-        n2.establecerValorInicialM(5);
-        n2.establecerValorPorcionHelado(0.50);
-        n2.establecerValorPorcionPastel(2.20);
-        
-        MenuEconomico e1 = new MenuEconomico();
-        e1.establecerNombrePlato("Cuarto de pollo");
-        e1.establecerValorInicialM(3.50);
-        e1.establecerPorcentajeDescuento(10);
-        
-        MenuDia d1 = new MenuDia();
-        d1.establecerNombrePlato("Camarones Reventados");
-        d1.establecerValorInicialM(5.00);
-        d1.establecerValorBebida(1.00);
-        d1.establecerValorPostre(0.50);
-        
-        MenuCarta c1 = new MenuCarta();
-        c1.establecerNombrePlato("Lasaña Inglesa");
-        c1.establecerValorInicialM(8.00);
-        c1.establecerValorM(10.00);
-        c1.establecerValorPorcionGuarnicion(3.50);
-        c1.establecerValorBebida(2.00);
-        c1.establecerPorcentajeServ(32);
-        
+
+        MenuNinios n1 = new MenuNinios("Niños 01", 2.00, 1.00, 1.50);
+        MenuNinios n2 = new MenuNinios("Niños 02", 3.00, 1.00, 1.50);
+
+        MenuEconomico e1 = new MenuEconomico("Econo 001", 4.00, 25.00);
+
+        MenuDia d1 = new MenuDia("Dia 001", 5.00, 1.00, 1.00);
+
+        MenuCarta c1 = new MenuCarta("Carta 001", 6.0, 1.5, 2.0, 10.00);
+
         listaMenus.add(n1);
         listaMenus.add(n2);
         listaMenus.add(e1);
         listaMenus.add(d1);
         listaMenus.add(c1);
-        
-        cue.establecerMenu(listaMenus);
-        cue.establecerNombre("Pablo Costa Torres");
-        cue.establecerSubtotal();
-        cue.establecerIva();
-        
+
         for (int i = 0; i < listaMenus.size(); i++) {
             listaMenus.get(i).establecerValorCancelar();
         }
-        cue.establecerValorCancelar();
+        Cuenta cue = new Cuenta("Rene Elizalde", listaMenus, 10);
+
+        cue.establecerSubtotal();
+        cue.establecerValorCancelarTotal();
+
         System.out.println(cue);
     }
 }
