@@ -12,11 +12,11 @@ import java.util.ArrayList;
  */
 public class Cuenta {
 
-    protected String nombre;
-    protected ArrayList<Menu> menu;
-    protected double valorCancelarTotal;
-    protected double subtotal;
-    protected double iva;
+    private String nombre;
+    private ArrayList<Menu> menu;
+    private double valorCancelarTotal;
+    private double subtotal;
+    private double iva;
 
     public String obtenerNombre() {
         return nombre;
